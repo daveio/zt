@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-puts "hello from zt dummy executable"
 
-#require 'zt/cli'
-#Zt::CLI.start
+require 'zt/cli'
+Zt::CLI.start
