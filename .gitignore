@@ -1,0 +1,27 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+# rspec failure tracking
+.rspec_status
+
+# per https://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/
+/Gemfile.lock
+
+### Custom
+
+# Private notes
+LOCAL-NOTES.md
+
+# Finder junk
+.DS_Store
+**/.DS_Store
+
+# Real .env files
+**/.env
+
