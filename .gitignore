@@ -26,5 +26,7 @@ LOCAL-NOTES.md
 **/.env
 
 # RubyMine meta
-/.idea
+/.idea/.rakeTasks
+/.idea/*.iml
+
 

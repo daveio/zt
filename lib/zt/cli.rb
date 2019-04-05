@@ -21,9 +21,15 @@ module Zt
     end
 
     desc 'pull',
-         'Show the internal representation of the loaded config'
-    def debug_conf
-      puts conf.to_s
+         'Fetch and save the current state of your networks'
+    def pull
+      true
+    end
+
+    desc 'auth [TOKEN]',
+         'Store an authentication token (unencrypted) in the config'
+    def auth(token)
+      token
     end
   end
 end

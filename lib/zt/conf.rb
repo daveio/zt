@@ -34,7 +34,7 @@ module Zt
         'network_id' => 'domain-name.zt'
       },
       'zt.conf.yaml' => {
-        'api_key' => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+        'token' => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
         'top_level_domain' => 'zt'
       }
     }.freeze
