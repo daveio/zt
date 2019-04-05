@@ -1,6 +1,5 @@
-require "zt/version"
+# frozen_string_literal: true
 
+# Top-level zt module
 module Zt
-  class Error < StandardError; end
-  # Your code goes here...
 end

@@ -1,12 +1,17 @@
+# frozen_string_literal: true
+
 require 'thor'
-require 'zt'
+require 'zt/conf'
+require 'zt/errors'
+require 'zt/version'
+
 module Zt
+  # Base CLI class
   class CLI < Thor
-
-    desc "version", "Show the zt version number"
+    @config = Zt::Conf.instance
+    desc 'version', 'Show the zt version number'
     def version
-      puts "This is zt version #{Zt::VERSION}"
+      puts "zt version #{Zt::VERSION}"
     end
-
   end
 end

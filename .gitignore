@@ -25,3 +25,6 @@ LOCAL-NOTES.md
 # Real .env files
 **/.env
 
+# RubyMine meta
+/.idea
+
