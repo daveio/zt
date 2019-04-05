@@ -45,6 +45,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'app_configuration', '~> 0.0'
+  spec.add_dependency 'faraday', '~> 0.0'
   spec.add_dependency 'thor', '~> 0.0'
   spec.add_dependency 'xdg', '~> 2.0'
 
@@ -53,6 +54,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pry', '~> 0.0'
   spec.add_development_dependency 'rake', '~> 12.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'rubocop', '~> 0.0'
+  spec.add_development_dependency 'rubocop', '~> 0.0', '>= 0.49.0'
   spec.add_development_dependency 'rubocop-performance', '~> 1.0'
 end

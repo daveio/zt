@@ -1,18 +1,41 @@
 # frozen_string_literal: true
 
-require 'yaml'
+require 'ostruct'
+require 'singleton'
 require 'xdg'
+require 'yaml'
 
 module Zt
   # Create initial config if it is not present already
   class Conf
     include Singleton
+    attr_accessor :conf
+    CONF_DIR = "#{XDG['CONFIG_HOME']}/zt"
+    CONF_SECTIONS = {
+      domains: 'domains.yaml',
+      networks: 'networks.yaml',
+      nodes: 'nodes.yaml',
+      zt: 'zt.conf.yaml'
+    }.freeze
+    # noinspection RubyStringKeysInHashInspection
     INITIAL_CONF = {
-      'networks.yaml' => [{}],
-      'nodes.yaml' => [{}],
+      'nodes.yaml' => {
+        'node_id' => {
+          'hostname' => 'node-hostname',
+          'networks' => %w[network_id_1 network_id_2]
+        }
+      },
+      'networks.yaml' => {
+        'network_id' => {
+          'name' => 'network_name'
+        }
+      },
+      'domains.yaml' => {
+        'network_id' => 'domain-name.zt'
+      },
       'zt.conf.yaml' => {
-        update_networks: true,
-        update_nodes: true
+        'api_key' => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+        'top_level_domain' => 'zt'
       }
     }.freeze
 
@@ -24,22 +47,29 @@ module Zt
     private
 
     def read_config
+      @conf = OpenStruct.new
+      CONF_SECTIONS.each_key do |section|
+        @conf[section] =
+          YAML.load_file("#{CONF_DIR}/#{CONF_SECTIONS[section]}")
+      end
       true
+    rescue StandardError
+      false
     end
 
     def ensure_config_on_disk
       ensure_config_dir && ensure_config_files
     end
 
-    def ensure_config_files(config_dir = "#{XDG['CONFIG_HOME']}/zt")
+    def ensure_config_files
       existing_files = []
       created_files = []
-      %w[networks.yaml nodes.yaml zt.conf.yaml].each do |config_file|
-        if File.exist?("#{config_dir}/#{config_file}")
-          existing_files += config_file
-        elsif create_config_file("#{config_dir}/#{config_file}",
+      INITIAL_CONF.keys.each do |config_file|
+        if File.exist?("#{CONF_DIR}/#{config_file}")
+          existing_files.append(config_file)
+        elsif create_config_file("#{CONF_DIR}/#{config_file}",
                                  INITIAL_CONF[config_file])
-          created_files += config_file
+          created_files.append(config_file)
         end
       end
       (existing_files + created_files).uniq.sort == INITIAL_CONF.keys.sort
