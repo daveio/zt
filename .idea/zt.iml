@@ -20,7 +20,7 @@
     <orderEntry type="library" scope="PROVIDED" name="mime-types-data (v3.2019.0331, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_xml (v0.6.0, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="parallel (v1.17.0, RVM: ruby-2.6.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="parser (v2.6.2.0, RVM: ruby-2.6.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="parser (v2.6.2.1, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.12.2, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="psych (v3.1.0, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.0.0, RVM: ruby-2.6.2) [gem]" level="application" />

@@ -2,6 +2,7 @@
 
 require 'thor'
 require 'zt/conf'
+require 'zt/constants'
 require 'zt/errors'
 require 'zt/version'
 
@@ -12,7 +13,7 @@ module Zt
 
     def initialize(thor_args = [], thor_options = {}, thor_config = {})
       super(thor_args, thor_options, thor_config)
-      @conf = Zt::Conf.instance.conf
+      @conf = Conf.instance.conf
     end
 
     desc 'version', 'Show the zt version number'
@@ -29,7 +30,16 @@ module Zt
     desc 'auth [TOKEN]',
          'Store an authentication token (unencrypted) in the config'
     def auth(token)
-      token
+      token_regex = Constants::AUTH_TOKEN_REGEX
+      if token.length != Constants::AUTH_TOKEN_LENGTH
+        abort('Authentication token must be exactly 32 characters')
+      elsif !token_regex.match?(token)
+        abort('Authentication token contains invalid characters, only ' \
+              'alphanumerics are permitted.')
+      else
+        conf.zt['token'] = token
+        Zt::Conf.instance.save! :zt
+      end
     end
   end
 end

@@ -15,5 +15,12 @@ module Zt
         super
       end
     end
+
+    # Invalid section specifier for config
+    class ZtConfInvalidSectionError < StandardError
+      def initialize
+        super
+      end
+    end
   end
 end
