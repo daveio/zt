@@ -1,17 +1,10 @@
-/.bundle/
-/.yardoc
-/_yardoc/
-/coverage/
-/doc/
-/pkg/
-/spec/reports/
-/tmp/
+### https://raw.github.com/github/gitignore/e32de69dc7a71f84b1da648a5d893dd8bcc87d8a/Jekyll.gitignore
 
-# rspec failure tracking
-.rspec_status
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
 
-# per https://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/
-/Gemfile.lock
 
 ### Custom
 
@@ -21,11 +14,4 @@ LOCAL-NOTES.md
 # Finder junk
 .DS_Store
 **/.DS_Store
-
-# Real .env files
-**/.env
-
-# RubyMine meta
-/.idea/.rakeTasks
-
 

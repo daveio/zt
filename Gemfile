@@ -1,4 +1,5 @@
 source "https://rubygems.org"
 
-# see zt.gemspec
-gemspec
+gem "jekyll"
+gem "jekyll-theme-cayman"
+gem "html-proofer"

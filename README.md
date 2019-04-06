@@ -1,82 +1,37 @@
-# zt
+## Welcome to GitHub Pages
 
-Utilities and glue to make working with ZeroTier networks a bit more
-friendly
+You can use the [editor on GitHub](https://github.com/daveio/updo/edit/gh-pages/README.md) to maintain and preview the content for your website in Markdown files.
 
-## Installation
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-At this point, `zt` is intended as a command-line tool first and a
-library second (if at all). As such, instructions for usage with Bundler
-or similar are not given.
+### Markdown
 
-If `zt` becomes useful as a library,
-instructions will be provided, and if you want to try using it as a
-library anyway, then best of luck to you.
+Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-`zt` can be installed with RubyGems, and is published to the default
-repository. Simply do
+```markdown
+Syntax highlighted code block
 
-```bash
-gem install zt
+# Header 1
+## Header 2
+### Header 3
+
+- Bulleted
+- List
+
+1. Numbered
+2. List
+
+**Bold** and _Italic_ and `Code` text
+
+[Link](url) and ![Image](src)
 ```
 
-to make the `zt` command available. Depending on your Ruby setup, you
-may need to install it as a superuser, with
+For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-```bash
-sudo gem install zt
-```
+### Jekyll Themes
 
-instead.
+Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/daveio/updo/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-## Usage
+### Support or Contact
 
-TODO: Usage details
-
-## Development
-
-- Fork the repository on GitHub.
-  -  
--  Check out the repository.
-   -  `git clone https://github.com/daveio/zt`
--  Enter the checkout directory.
-   - `cd zt`
-- Install dependencies.
-  - `bin/setup`
-- Run the tests.
-  - `rake spec`
-- Make a new branch for your feature.
-  - git branch
-
-to install dependencies. Then, run `rake spec` to run the tests. You can
-also run `bin/console` for an interactive prompt that will allow you to
-experiment.
-
-To install this gem onto your local machine, run `bundle exec rake
-install`. To release a new version, update the version number in
-`version.rb`, and then run `bundle exec rake release`, which will create
-a git tag for the version, push git commits and tags, and push the
-`.gem` file to [rubygems.org][link-rubygems].
-
-## Contributing
-
-Bug reports and pull requests are welcome [on GitHub][link-repo]. This
-project is intended to be a safe, welcoming space for collaboration, and
-contributors are expected to adhere to the [code of conduct][link-coc].
-
-## License
-
-The gem is available as open source under the terms of the
-[MIT License][link-mitlic].
-
-## Code of Conduct
-
-Everyone interacting in the zt project’s codebases, issue trackers, chat
-rooms, and mailing lists, including the original author, is expected to
-follow the [code of conduct][link-coc].
-
-[link-repo]: https://github.com/daveio/zt
-[link-coc]: https://github.com/daveio/zt/blob/master/CODE_OF_CONDUCT.md
-[link-cocov]: http://contributor-covenant.org
-[link-mitlic]: https://opensource.org/licenses/MIT
-[link-rubygems]: https://rubygems.org
+Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.

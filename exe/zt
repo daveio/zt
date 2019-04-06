@@ -1,4 +1,0 @@
-#!/usr/bin/env ruby
-
-require 'zt/cli'
-Zt::CLI.start
