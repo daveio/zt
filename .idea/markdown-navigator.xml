@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="MarkdownProjectSettings" wasCopied="true">
-    <PreviewSettings splitEditorLayout="SPLIT" splitEditorPreview="PREVIEW" useGrayscaleRendering="false" zoomFactor="1.0" maxImageWidth="0" showGitHubPageIfSynced="false" allowBrowsingInPreview="false" synchronizePreviewPosition="true" highlightPreviewType="NONE" highlightFadeOut="5" highlightOnTyping="true" synchronizeSourcePosition="true" verticallyAlignSourceAndPreviewSyncPosition="true" showSearchHighlightsInPreview="false" showSelectionInPreview="true" openRemoteLinks="true" replaceUnicodeEmoji="false" lastLayoutSetsDefault="false">
+    <PreviewSettings splitEditorLayout="SPLIT" splitEditorPreview="PREVIEW" useGrayscaleRendering="false" zoomFactor="1.0" maxImageWidth="0" showGitHubPageIfSynced="false" allowBrowsingInPreview="false" synchronizePreviewPosition="true" highlightPreviewType="BLOCK" highlightFadeOut="5" highlightOnTyping="true" synchronizeSourcePosition="true" verticallyAlignSourceAndPreviewSyncPosition="true" showSearchHighlightsInPreview="false" showSelectionInPreview="true" openRemoteLinks="true" replaceUnicodeEmoji="false" lastLayoutSetsDefault="false">
       <PanelProvider>
-        <provider providerId="com.vladsch.idea.multimarkdown.editor.swing.html.panel" providerName="Default - Swing" />
+        <provider providerId="com.vladsch.idea.multimarkdown.editor.javafx.html.panel" providerName="JavaFX WebView" />
       </PanelProvider>
     </PreviewSettings>
     <ParserSettings gitHubSyntaxChange="false" emojiShortcuts="1" emojiImages="0">
@@ -62,7 +62,7 @@
     </ParserSettings>
     <HtmlSettings headerTopEnabled="false" headerBottomEnabled="false" bodyTopEnabled="false" bodyBottomEnabled="false" embedUrlContent="false" addPageHeader="true" embedImages="false" embedHttpImages="false" imageUriSerials="false" addDocTypeHtml="true" noParaTags="false" plantUmlConversion="0" mathConversion="0">
       <GeneratorProvider>
-        <provider providerId="com.vladsch.idea.multimarkdown.editor.swing.html.generator" providerName="Default Swing HTML Generator" />
+        <provider providerId="com.vladsch.idea.multimarkdown.editor.javafx.html.generator" providerName="JavaFx HTML Generator" />
       </GeneratorProvider>
       <headerTop />
       <headerBottom />
@@ -71,13 +71,16 @@
     </HtmlSettings>
     <CssSettings previewScheme="UI_SCHEME" cssUri="" isCssUriEnabled="false" isCssUriSerial="true" isCssTextEnabled="false" isDynamicPageWidth="true">
       <StylesheetProvider>
-        <provider providerId="com.vladsch.idea.multimarkdown.editor.swing.html.css" providerName="Default Swing Stylesheet" />
+        <provider providerId="com.vladsch.idea.multimarkdown.editor.javafx.html.css" providerName="Default JavaFx Stylesheet" />
       </StylesheetProvider>
-      <ScriptProviders />
+      <ScriptProviders>
+        <provider providerId="com.vladsch.idea.multimarkdown.editor.hljs.html.script" providerName="HighlightJS Script" />
+      </ScriptProviders>
       <cssText />
       <cssUriHistory />
     </CssSettings>
-    <HtmlExportSettings updateOnSave="false" parentDir="" targetDir="" cssDir="" scriptDir="" plainHtml="false" imageDir="" copyLinkedImages="false" imageUniquifyType="0" targetPathType="2" targetExt="" useTargetExt="false" noCssNoScripts="false" useElementStyleAttribute="false" linkToExportedHtml="true" exportOnSettingsChange="true" regenerateOnProjectOpen="false" linkFormatType="HTTP_ABSOLUTE" />
+    <AnnotatorSettings targetHasSpaces="true" linkCaseMismatch="true" wikiCaseMismatch="true" wikiLinkHasDashes="true" notUnderWikiHome="true" targetNotWikiPageExt="true" notUnderSourceWikiHome="true" targetNameHasAnchor="true" targetPathHasAnchor="true" wikiLinkHasSlash="true" wikiLinkHasSubdir="true" wikiLinkHasOnlyAnchor="true" linkTargetsWikiHasExt="true" linkTargetsWikiHasBadExt="true" notUnderSameRepo="true" targetNotUnderVcs="false" linkNeedsExt="true" linkHasBadExt="true" linkTargetNeedsExt="true" linkTargetHasBadExt="true" wikiLinkNotInWiki="true" imageTargetNotInRaw="true" repoRelativeAcrossVcsRoots="true" multipleWikiTargetsMatch="true" unresolvedLinkReference="true" linkIsIgnored="true" anchorIsIgnored="true" anchorIsUnresolved="true" anchorLineReferenceIsUnresolved="true" anchorLineReferenceFormat="true" anchorHasDuplicates="true" abbreviationDuplicates="true" abbreviationNotUsed="true" attributeIdDuplicateDefinition="true" attributeIdNotUsed="true" footnoteDuplicateDefinition="true" footnoteUnresolved="true" footnoteDuplicates="true" footnoteNotUsed="true" macroDuplicateDefinition="true" macroUnresolved="true" macroDuplicates="true" macroNotUsed="true" referenceDuplicateDefinition="true" referenceUnresolved="true" referenceDuplicates="true" referenceNotUsed="true" referenceUnresolvedNumericId="true" enumRefDuplicateDefinition="true" enumRefUnresolved="true" enumRefDuplicates="true" enumRefNotUsed="true" enumRefLinkUnresolved="true" enumRefLinkDuplicates="true" simTocUpdateNeeded="true" simTocTitleSpaceNeeded="true" />
+    <HtmlExportSettings updateOnSave="false" parentDir="" targetDir="" cssDir="css" scriptDir="js" plainHtml="false" imageDir="" copyLinkedImages="false" imageUniquifyType="0" targetPathType="2" targetExt="" useTargetExt="false" noCssNoScripts="false" useElementStyleAttribute="false" linkToExportedHtml="true" exportOnSettingsChange="true" regenerateOnProjectOpen="false" linkFormatType="HTTP_ABSOLUTE" />
     <LinkMapSettings>
       <textMaps />
     </LinkMapSettings>

@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="123fd8b0-f85a-4721-84de-17b1d550c0c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/zt/constants.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/zt/exporters.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/zt/exporters/_base_exporter.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/zt/exporters/hosts_file_exporter.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/zt/importers.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/zt/importers/_base_importer.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/zt/importers/network_importer.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/zt/importers/node_importer.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/zt/remote_api.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/zt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/zt.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/zt.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/zt.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/zt/cli.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/zt/cli.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/zt/conf.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/zt/conf.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/zt/errors/conf_errors.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/zt/errors/conf_errors.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +18,35 @@
     <favorites_list name="zt" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="88">
+                <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState>
+                  <previewPanelState version="2.8.4">
+                    <jsState>{&quot;onLoadScroll&quot;:{&quot;x&quot;:0,&quot;y&quot;:814.50000023}}</jsState>
+                  </previewPanelState>
+                </markdownNavigatorState>
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zt.gemspec">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -72,14 +89,15 @@
         <option value="$PROJECT_DIR$/lib/zt/exporters.rb" />
         <option value="$PROJECT_DIR$/lib/zt/importers.rb" />
         <option value="$PROJECT_DIR$/lib/zt.rb" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="5" />
-    <option name="y" value="27" />
+    <option name="y" value="23" />
     <option name="width" value="2550" />
-    <option name="height" value="1373" />
+    <option name="height" value="1381" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -136,6 +154,11 @@
               <item name="zt" type="462c0819:PsiDirectoryNode" />
               <item name="spec" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="zt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zt" type="462c0819:PsiDirectoryNode" />
+              <item name="README.md" type="ab9368bb:PsiFileNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -148,7 +171,7 @@
     <property name="editor.config.ad.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -177,22 +200,24 @@
       <workItem from="1554504876507" duration="124000" />
       <workItem from="1554534836411" duration="5712000" />
       <workItem from="1554555007999" duration="7192000" />
+      <workItem from="1554575092693" duration="1839000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13236000" />
+    <option name="totallyTimeSpent" value="15184000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="27" width="2550" height="1373" extended-state="6" />
+    <frame x="5" y="23" width="2550" height="1381" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.715415" visible="true" weight="0.15430622" />
-      <window_info id="Structure" order="1" sideWeight="0.28458497" side_tool="true" visible="true" weight="0.15430622" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.71428573" visible="true" weight="0.1555024" />
+      <window_info id="Structure" order="1" sideWeight="0.2857143" side_tool="true" visible="true" weight="0.1555024" />
       <window_info id="DB Browser" order="2" weight="0.32962668" />
       <window_info id="Favorites" order="3" sideWeight="0.50039524" side_tool="true" weight="0.07854865" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960127" weight="0.32964426" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960127" visible="true" weight="0.32914376" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -203,7 +228,7 @@
       <window_info anchor="bottom" id="DB Execution Console" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5003987" side_tool="true" weight="0.32990506" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5003987" side_tool="true" weight="0.32964426" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -323,6 +348,29 @@
           <first_editor relative-caret-position="-596" />
           <second_editor>
             <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zt.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="88">
+            <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState>
+              <previewPanelState version="2.8.4">
+                <jsState>{&quot;onLoadScroll&quot;:{&quot;x&quot;:0,&quot;y&quot;:814.50000023}}</jsState>
+              </previewPanelState>
+            </markdownNavigatorState>
           </second_editor>
         </state>
       </provider>
