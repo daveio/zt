@@ -21,11 +21,17 @@ module Zt
       end
 
       def networks
-        self.class.get '/network', @req_opts
+        get_parsed('/network')
       end
 
       def network_members(network_id)
-        self.class.get "/network/#{network_id}/member", @req_opts
+        get_parsed("/network/#{network_id}/member")
+      end
+
+      private
+
+      def get_parsed(path)
+        self.class.get(path, @req_opts).parsed_response
       end
 
     end

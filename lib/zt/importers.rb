@@ -8,6 +8,7 @@ require 'zt/importers/node_importer'
 module Zt
   module Importers
     class Importer
+      attr_accessor :importers
       def initialize(networks, nodes, *importer_names)
         importer_names = Zt::Constants::ALL_IMPORTERS if importer_names.empty?
         importer_classes = importer_names.map do |n|

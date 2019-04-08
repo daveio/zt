@@ -1,10 +1,7 @@
 # frozen_string_literal: true
 
 require 'thor'
-require 'zt/conf'
-require 'zt/constants'
-require 'zt/errors'
-require 'zt/version'
+require 'zt'
 
 module Zt
   # Base CLI class
@@ -24,7 +21,38 @@ module Zt
     desc 'pull',
          'Fetch and save the current state of your networks'
     def pull
-      true
+      puts '≫ pull started'
+      puts '  ≫ pulling'
+      rapi = Zt::RemoteAPI::ZeroTierAPI.new
+      print '    ≫ networks '
+      rnetworks = rapi.networks
+      column_width = rnetworks.map { |n| n['config']['name'].length }.max + 1
+      print ' ' * (column_width + 9)
+      puts '✅'
+      rnodes = {}
+      rnetworks.each do |net|
+        netid = net['id']
+        netname = net['config']['name']
+        print "    ≫ nodes for network #{netname}"
+        rnodes[netid] = rapi.network_members(netid)
+        print ' ' * (column_width - netname.length)
+        puts '✅'
+      end
+      puts '  ≫ processing'
+      importer_results = Zt::Importers::Importer.new(rnetworks, rnodes).import
+      lnetworks = {}
+      ldomains = {}
+      importer_results.each do |importer_result|
+        importer_result.each_key do |network|
+          ldomains[network] = importer_result[network][:local][:dns_zone]
+          lnetworks[network] = importer_result[network]
+        end
+      end
+      puts '  ≫ saving'
+      Zt::Conf.instance.conf.domains = ldomains
+      Zt::Conf.instance.conf.networks = lnetworks
+      Zt::Conf.instance.save!
+      puts '≫ pull completed'
     end
 
     desc 'auth [TOKEN]',
