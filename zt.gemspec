@@ -42,7 +42,6 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'app_configuration', '~> 0.0'
   spec.add_dependency 'httparty', '~> 0.0', '>= 0.10.0'
   spec.add_dependency 'thor', '~> 0.0'
   spec.add_dependency 'xdg', '~> 2.0'
