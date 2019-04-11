@@ -27,7 +27,7 @@ you.
 `zt` can be installed with RubyGems, and is published to the default
 repository. Simply install it like any other gem.
 
-```bash
+```plain
 gem install zt
 ```
 
@@ -36,13 +36,43 @@ install it as a superuser. If you're not sure, and if commands like
 `rvm`, `rbenv`, and/or `ruby-build` don't ring any bells, you probably
 need to install as a superuser using `sudo`.
 
-```bash
+```plain
 sudo gem install zt
 ```
 
 ## Usage
 
-<!-- TODO: the bit we're all here to see in the first place -->
+At initial release, there's only one thing `zt` does - fetch the state of your nodes and networks, and output their IPs in `/etc/hosts` format.
+
+To start, head to [my.zerotier.com][link-my-zerotier] and find (or generate) an API key. They're on the main page under 'API Access Tokens'. It'll be a 32-character random string.
+
+When you have `zt` installed and you have an API key, generate your initial configuration.
+
+```plain
+zt auth YourAPIKeyXXXXXXXXXXXXXXXXXXXXXX
+```
+
+Then fetch the state of your networks and nodes.
+
+```plain
+zt pull
+```
+
+This will update the YAML files in `~/.config/zt` - if you have a reason to edit them, you can do so, but they'll be overwritten next time you run `zt pull`.
+
+You can then generate the `hosts` file entries.
+
+```plain
+zt export
+```
+
+This will print them to STDOUT, so if you want to dump them to a file just use shell redirection.
+
+```plain
+zt export > yourfilename.txt
+```
+
+For now, that's it.
 
 ## Development
 
@@ -101,3 +131,4 @@ follow the [code of conduct][link-coc].
 [link-wsl]: https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux
 [img-badge-gem]: https://badge.fury.io/rb/zt.svg
 [img-fork_button]: https://zt.dave.io/images/fork_button.png
+[link-my-zerotier]: https://my.zerotier.com
