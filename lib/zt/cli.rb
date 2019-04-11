@@ -42,17 +42,35 @@ module Zt
       importer_results = Zt::Importers::Importer.new(rnetworks, rnodes).import
       lnetworks = {}
       ldomains = {}
+      lnodes = {}
       importer_results.each do |importer_result|
-        importer_result.each_key do |network|
-          ldomains[network] = importer_result[network][:local][:dns_zone]
-          lnetworks[network] = importer_result[network]
+        if importer_result.key?(:networks)
+          importer_result[:networks].each_key do |netid|
+            ldomains[netid] =
+              importer_result[:networks][netid][:local][:dns_zone]
+            lnetworks[netid] = importer_result[:networks][netid]
+          end
+        end
+
+        next unless importer_result.key?(:nodes)
+
+        importer_result[:nodes].each_key do |nodeid|
+          lnodes[nodeid] = importer_result[:nodes][nodeid]
         end
       end
       puts '  ≫ saving'
       Zt::Conf.instance.conf.domains = ldomains
       Zt::Conf.instance.conf.networks = lnetworks
+      Zt::Conf.instance.conf.nodes = lnodes
       Zt::Conf.instance.save!
       puts '≫ pull completed'
+    end
+
+    desc 'export',
+         'export the on-disk database to STDOUT in /etc/hosts format'
+    def export(format = :hosts)
+      output = Zt::Exporters::Exporter.new.export_one_format :hosts
+      puts output
     end
 
     desc 'auth [TOKEN]',

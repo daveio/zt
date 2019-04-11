@@ -1,35 +1,5 @@
 # frozen_string_literal: true
 
-# Node importer output schema:
-# {
-#   node_id: {
-#     # TODO: warn if multiple hostnames for same node id, pick the most common
-#     hostname: 'hostname',
-#     memberships: {
-#       network_id: {
-#         addrs: [
-#           '1.1.1.1',
-#           '2.2.2.2'
-#         ]
-#       },
-#       another_network_id: {
-#         addrs: [
-#           '1.2.3.4',
-#           '1.2.3.5'
-#         ]
-#         flags: []
-#       },
-#       yet_another_network_id: {
-#         addrs: [
-#           '1.2.3.4',
-#           '1.2.3.5'
-#         ]
-#         flags: []
-#       }
-#     }
-#   }
-# }
-require 'json'
 require 'zt/importers/_base_importer'
 
 module Zt
@@ -37,6 +7,8 @@ module Zt
     class NodeImporter < BaseImporter
       def import
         output = {}
+        hostnames = {}
+        memberships = {}
         # normalise data
         nodes.each_key do |network_id|
           net = nodes[network_id]
@@ -44,12 +16,37 @@ module Zt
             {
               node_id: node['nodeId'],
               node_name: node['name'],
-              node_addrs: node['config']['ipAssignments'],
+              node_addr: node['config']['ipAssignments'],
               node_authed: node['config']['authorized']
             }
           end
-          # TODO: finish implementation
+          normalised_nodes.each do |n|
+            hostnames[n[:node_id]] = [] unless hostnames.key?(n[:node_id])
+            memberships[n[:node_id]] = [] unless memberships.key?(n[:node_id])
+
+            hostnames[n[:node_id]].append(n[:node_name])
+            memberships[n[:node_id]].append([network_id, n[:node_addr]])
+            n.delete(:node_addr)
+            output[n[:node_id]] = {} unless output.key?(n[:node_id])
+            output[n[:node_id]][:remote] = n
+            output[n[:node_id]][:local] = {}
+          end
+          output.each_key do |k|
+            output[k][:remote][:node_name] = hostnames[k].max_by do |i|
+              hostnames[k].count(i)
+            end
+            memberships[k].each do |m|
+              output[k][:local][:networks] = {} unless
+                output[k][:local].key? :networks
+
+              output[k][:local][:networks][m[0]] = m[1]
+            end
+
+          end
         end
+        {
+          nodes: output
+        }
       end
     end
   end

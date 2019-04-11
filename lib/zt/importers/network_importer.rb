@@ -37,7 +37,9 @@ module Zt
             dns_zone: zone
           }
         end
-        output
+        {
+          networks: output
+        }
       end
     end
   end

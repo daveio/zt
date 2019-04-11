@@ -4,8 +4,8 @@ module Zt
   module Exporters
     class BaseExporter
       attr_accessor :data
-      def initialize(data)
-        @data = data
+      def initialize
+        super
       end
 
       def export

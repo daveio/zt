@@ -7,11 +7,11 @@ require 'zt/exporters/hosts_file_exporter'
 module Zt
   module Exporters
     class Exporter
-      def initialize(data, *exporter_names)
+      def initialize(*exporter_names)
         exporter_names = Zt::Constants::ALL_EXPORTERS if exporter_names.empty?
 
         exporter_classes = exporter_names.map { |n| Zt::Exporters.const_get(n) }
-        @exporters = exporter_classes.map { |c| c.new(data) }
+        @exporters = exporter_classes.map(&:new)
       end
 
       # @return [Array[Hash]] an array of hashes from each exporter
@@ -22,6 +22,10 @@ module Zt
       # importer, consider that for later as a Hash[Hash].
       def export
         @exporters.map(&:export)
+      end
+
+      def export_one_format(format)
+        Zt::Exporters::HostsFileExporter.new.export if format == :hosts
       end
     end
   end
