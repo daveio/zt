@@ -58,7 +58,7 @@ Then fetch the state of your networks and nodes.
 zt pull
 ```
 
-This will update the YAML files in `~/.config/zt` - if you have a reason to edit them, you can do so, but they'll be overwritten next time you run `zt pull`.
+This will update the YAML files in `~/.config/zt` - if you have a reason to edit them, you can do so, but they'll be overwritten next time you run `zt pull` withe exception of `zt.conf.yaml`.
 
 You can then generate the `hosts` file entries.
 
